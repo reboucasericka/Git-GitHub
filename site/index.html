@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Estudos de Git & GitHub — Ericka Rebouças</title>
+  <meta name="description" content="Resumo do que aprendi sobre Git e GitHub: comandos, fluxo de trabalho, branches e boas práticas." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="assets/icons/favicon.png" />
+  <meta property="og:title" content="Estudos de Git & GitHub — Ericka Rebouças" />
+  <meta property="og:description" content="Comandos e práticas de versionamento que aprendi no Curso em Vídeo." />
+  <meta property="og:type" content="website" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-wrap">
+      <a class="brand" href="#">
+        <img src="assets/icons/favicon.png" alt="" class="brand-mark" />
+        <span class="brand-text">Git & GitHub • Estudos</span>
+      </a>
+
+      <!-- toggle sem JS -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Abrir menu" />
+      <label for="nav-toggle" class="burger" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="nav">
+        <a href="#sobre">Sobre</a>
+        <a href="#comandos">Comandos</a>
+        <a href="#fluxo">Fluxo</a>
+        <a href="#recursos">Recursos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-wrap">
+        <h1>Controle de versão na prática</h1>
+        <p>Este mini-site resume o que aprendi sobre <strong>Git</strong> e <strong>GitHub</strong> — do primeiro commit ao fluxo com branches, pull requests e resolução de conflitos.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#comandos">Ver comandos</a>
+          <a class="btn ghost" href="#recursos">Recursos</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="section">
+      <div class="container grid-2">
+        <div>
+          <h2>O que é Git? E GitHub?</h2>
+          <p><strong>Git</strong> é um sistema de controlo de versões distribuído. Guarda o histórico do teu projeto e permite voltar atrás, comparar mudanças e trabalhar em paralelo.</p>
+          <p><strong>GitHub</strong> é uma plataforma para alojar repositórios Git, colaborar com issues, pull requests e gerir o ciclo de desenvolvimento.</p>
+        </div>
+        <div class="card note">
+          <h3>O que consigo fazer agora</h3>
+          <ul class="checklist">
+            <li>Inicializar e clonar repositórios</li>
+            <li>Fazer commits com mensagens claras</li>
+            <li>Criar/mesclar <em>branches</em></li>
+            <li>Resolver conflitos simples</li>
+            <li>Publicar no GitHub</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="comandos" class="section alt">
+      <div class="container">
+        <h2>Comandos essenciais</h2>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>Configuração</h3>
+<pre><code>$ git config --global user.name "Ericka Rebouças"
+$ git config --global user.email "teu@email.com"
+$ git config --global init.defaultBranch main
+</code></pre>
+          </div>
+
+          <div class="card">
+            <h3>Primeiros passos</h3>
+<pre><code>$ git init
+$ git status
+$ git add .
+$ git commit -m "primeiro commit"
+</code></pre>
+          </div>
+
+          <div class="card">
+            <h3>Remote & GitHub</h3>
+<pre><code>$ git remote add origin https://github.com/SEUUSER/repositorio.git
+$ git branch -M main
+$ git push -u origin main
+</code></pre>
+          </div>
+
+          <div class="card">
+            <h3>Branches & Merge</h3>
+<pre><code>$ git branch feature/ui
+$ git switch feature/ui
+$ git merge feature/ui
+</code></pre>
+          </div>
+
+          <div class="card">
+            <h3>Atualizar & Reverter</h3>
+<pre><code>$ git pull
+$ git log --oneline --graph
+$ git checkout -- ficheiro.txt
+$ git revert &lt;hash&gt;
+</code></pre>
+          </div>
+
+          <div class="card">
+            <h3>Boa prática</h3>
+            <ul class="tips">
+              <li>Commits pequenos e frequentes</li>
+              <li>Mensagens no imperativo: “Adiciona…”, “Corrige…”</li>
+              <li>Uma branch por tarefa</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="fluxo" class="section">
+      <div class="container">
+        <h2>Fluxo de trabalho (resumo)</h2>
+        <ol class="flow">
+          <li>Criar uma branch a partir de <code>main</code></li>
+          <li>Commits atómicos com mensagens claras</li>
+          <li>Push da branch para o GitHub</li>
+          <li>Abrir um Pull Request e pedir revisão</li>
+          <li>Resolver observações e <em>merge</em></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="recursos" class="section alt">
+      <div class="container grid-2">
+        <div>
+          <h2>Recursos úteis</h2>
+          <ul class="links">
+            <li><a href="https://git-scm.com/doc" target="_blank" rel="noreferrer">Documentação oficial do Git</a></li>
+            <li><a href="https://docs.github.com/pt" target="_blank" rel="noreferrer">Guias do GitHub</a></li>
+            <li><a href="https://www.cursoemvideo.com/course/curso-de-git-e-github/" target="_blank" rel="noreferrer">Curso em Vídeo — Git & GitHub</a></li>
+          </ul>
+        </div>
+        <div class="card note">
+          <h3>Dica</h3>
+          <p>Usa o ficheiro <code>README.md</code> no repositório para documentar objetivos, como executar o projeto e referências.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>© <span id="ano"></span> Ericka Rebouças • Feito com Git 💛</p>
+      <a class="to-top" href="#top" aria-label="Voltar ao topo">↑</a>
+    </div>
+  </footer>
+
+  <!-- JS opcional para o ano; a página funciona sem JS -->
+  <script>
+    document.getElementById('ano').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
